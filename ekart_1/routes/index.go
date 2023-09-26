@@ -14,3 +14,11 @@ func Approutes(r *gin.Engine) {
 	user.GET("/profile/:id", controllers.Profile)
 
 }
+
+//Product Routes
+
+func ProductRoutes(r *gin.Engine, p controllers.ProductController) {
+	product := r.Group("/api/product")
+	product.POST("/insert", p.InsertProduct)
+
+}
